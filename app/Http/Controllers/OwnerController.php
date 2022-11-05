@@ -15,7 +15,9 @@ class OwnerController extends Controller
     public function index()
     {
         return view("owner.casher", [
-            "products" => Product::getProducts()
+            "products" => Product::getProducts(),
+            "menu" => "Owner"
+
         ]);
     }
 
@@ -39,7 +41,8 @@ class OwnerController extends Controller
         }
         return view("owner.add", [
             "products" => Product::getProducts(),
-            "total" => $total
+            "total" => $total,
+            "menu" => "Owner"
         ]);
     }
 
@@ -78,7 +81,8 @@ class OwnerController extends Controller
             // here edit product 
             return view("owner.edit", [
                 "products" => Product::getProducts(),
-                "product_edit" => $products
+                "product_edit" => $products,
+                "menu" => "Owner"
             ]);
         }
     }

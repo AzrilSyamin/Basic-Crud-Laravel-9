@@ -9,7 +9,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view("public.public", ["products" => Product::getProducts()]);
+        return view(
+            "public.public",
+            [
+                "products" => Product::getProducts(),
+                "menu" => "Home"
+            ]
+        );
     }
 
     public function cash(Request $request)
