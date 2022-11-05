@@ -25,8 +25,8 @@
         @csrf
         @include("asset/table")
         <div class=" d-flex justify-content-end  pt-3">
-          <button type="submit" class="btn btn-warning">Edit</button>
-          <button type="submit" class="btn btn-danger ms-2">Padam</button>
+          <button type="submit" class="btn btn-warning" name="submit" value="edit">Edit</button>
+          <button type="submit" class="btn btn-danger ms-2" name="submit" value="delete">Padam</button>
         </div>
       </form>
     </div>

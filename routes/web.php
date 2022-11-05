@@ -25,6 +25,6 @@ Route::get('/owner/add', [OwnerController::class, "add"]);
 Route::post('/owner/add', [OwnerController::class, "add"]);
 Route::post('/owner/adds', [OwnerController::class, "store"]);
 
-Route::get('/owner/edit', [OwnerController::class, "edit"]);
-Route::post('/owner/edit', [OwnerController::class, "edit"]);
+Route::get('/owner/edit', [OwnerController::class, "proses"]);
+Route::post('/owner/edit', [OwnerController::class, "proses"]);
 Route::put('/owner/update', [OwnerController::class, "update"]);
