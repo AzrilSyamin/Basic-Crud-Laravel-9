@@ -9,7 +9,6 @@ class ProductController extends Controller
 {
     public function index()
     {
-        // dd(Product::all());
         return view("public.public", ["products" => Product::getProducts()]);
     }
 
