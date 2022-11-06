@@ -1,66 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Basic Crud Vanilla PHP 
+Project ini dibina atas dasar percubaan dan pembelajaran sahaja, 
+jika anda ingin gunakan secara live, anda perlu tingkatkan securiti pada project ini terlebih dahulu, 
+pihak kami tidak akan bertanggung jawab atas apa yang berlaku pada website anda 
 
-## About Laravel
+## Gambaran Project
+Project ini digambarkan sebagai sistem Kaunter Pembayaran `(Casher)` dan Pemilik kedai, halaman `index` adalah casher dan `Owner` adalah pemilik kedai
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ Project ini mempunyai 2 versi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ <br>
+ <b style="color:orange">Gitlab Repo</b>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ - Versi <a href="https://gitlab.com/AzrilSyamin/Basic-Crud-Vanilla-PHP"><b>Vanila PHP</b></a>
+ - Versi <a href="https://gitlab.com/AzrilSyamin/basic-crud-laravel-9"><b>Laravel 9</b></a>
+  
+ <br>
+ <b>Github Repo</b>
 
-## Learning Laravel
+ - Versi <a href="https://github.com/AzrilSyamin/Basic-Crud-Vanilla-PHP"><b>Vanila PHP</b></a>
+ - Versi <a href="https://github.com/AzrilSyamin/basic-crud-laravel-9"><b>Laravel 9</b></a>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Table of contents  
+1. [Tech Stack](#tech-stack)  
+2. [Ciri-ciri ](#ciri-ciri)  
+3. [Basic Role](#basic-role)  
+4. [Langkah Menjalankan project](#langkah-menjalankan-project)
+5. [Preview Public](#preview-public)
+6. [Preview Owner](#preview-owner)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ 
+## Tech Stack    
+- CSS - Bootstrap 5 
+- PHP
+- MySQL
+- Javascript + JQuery
 
-## Laravel Sponsors
+## Ciri-ciri  
+- Tambah data  
+- Edit data  
+- Padam Data
+- Cari Data (Search)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Basic Role
+- Public = Penjaga Kaunter
+- Owner = Pemilik Kedai
 
-### Premium Partners
+**Public** hanya boleh tolak quantiti barang(di kaunter)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+**Owner** boleh :
+- Tambah Barang **(Multiple Data)**
+- Edit Barang **(Multiple Data)**
+- Padam Barang **(Multiple Data)**
 
-## Contributing
+password untuk halaman owner adalah `Owner`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Langkah Menjalankan project
+Anda perlu clone project ini dengan salah satu langkah dibawah
+```
+//jika menggunakan http
+git clone https://gitlab.com/azrilsyamin/basic-crud-Vanilla-PHP.git
 
-## Code of Conduct
+//jika menggunakan SSH
+git clone git@gitlab.com:azrilsyamin/basic-crud-Vanilla-PHP.git
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+copy file `conf.txt` kepada `conf.php`
+```
+//jika anda menggunakan terminal 
+cp conf.txt conf.php
+```
+kemudian isi detail host anda pada file `conf.php`
+```
+$host = ""; //localhost
+$user = ""; //root
+$pass = ""; //password
+$db_name = ""; //database name
+```
+Setelah selesai semua langkah diatas, 
+anda boleh buka melalui Browser, 
+**Database** dan **Table** akan dibuat secara auto selepas anda jalankan project ini di browser
 
-## Security Vulnerabilities
+## Preview Public 
+![App Screenshot](public/asset/img/screenshoot/public.png)  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Preview Owner
+Halaman Owner sedikit berbeza dengan adanya beberapa button tambahan untuk kegunaan owner
+#### Owner Password - Memerlukan password untuk ke halaman owner
+![App Screenshot](public/asset/img/screenshoot/alert-password.png)  
+![App Screenshot](public/asset/img/screenshoot/owner.png)  
 
-## License
+#### Owner Tambah Barang
+![App Screenshot](public/asset/img/screenshoot/tambah-data.png)  
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![App Screenshot](public/asset/img/screenshoot/tambah-multiple.png)  
+
+#### Owner Edit Barang
+![App Screenshot](public/asset/img/screenshoot/edit-multiple.png) 
+
+
+
