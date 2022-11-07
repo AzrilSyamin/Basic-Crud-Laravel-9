@@ -114,13 +114,13 @@
   }
 
   for (let i = 0; i < checks.length; i++) {
-  checks[i].onclick=("click", function() {
+  checks[i].onclick=function() {
   let result = 0
   for (let i = 0; i < checks.length; i++) {
   if (checks[i].checked) result++
   }
   checkAll.checked = result === checks.length
-  })
+  }
   }
   // end checbox
 </script>
