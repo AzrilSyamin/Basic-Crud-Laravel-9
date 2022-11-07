@@ -60,4 +60,68 @@
   </div>
 </div>
 <!-- end modal  -->
+<script>
+  let mylink = window.location.pathname
+  let path = mylink.split("/")
+  const fileUrl = window.location.protocol + "//" + window.location.host + "/" //index
+
+  // simple alert
+  if (window.location.href == fileUrl + "owner") {
+  let owner = sessionStorage.getItem("name")
+
+  if(!owner){
+  // if not isset owner
+  let question = confirm("Opps... Anda Owner? Halaman ini hanya boleh dibuka oleh Owner")
+
+  if(question !== true){
+  // if question == false 
+  window.location.href=fileUrl
+  }else {
+  // if question == true
+  let pass = prompt("Halaman ini memerlukan password! Sila masukkan password anda dibawah!")
+
+  if (pass !== "Owner") {
+    alert("Maaf anda tidak dibenarkan disini")
+    window.location.href = fileUrl
+  }else{
+    sessionStorage.setItem("name","owner")
+    window.location.href
+  }
+  }
+
+  }else{
+  // if isset owner 
+  window.location.href
+  }
+
+  }
+  // end simple alert 
+
+  // checbox
+  let checkAll= document.querySelector("#select_all")
+  let checks= document.querySelectorAll(".check")
+
+  checkAll.onclick=function(){
+  if(checkAll.checked == true){
+  checks.forEach(element => {
+    element.checked=true
+  });
+  }else{
+  checks.forEach(element => {
+    element.checked=false
+  });
+  }
+  }
+
+  for (let i = 0; i < checks.length; i++) {
+  checks[i].onclick=("click", function() {
+  let result = 0
+  for (let i = 0; i < checks.length; i++) {
+  if (checks[i].checked) result++
+  }
+  checkAll.checked = result === checks.length
+  })
+  }
+  // end checbox
+</script>
 @endsection
