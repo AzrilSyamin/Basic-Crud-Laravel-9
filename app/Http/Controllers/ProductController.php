@@ -21,11 +21,30 @@ class ProductController extends Controller
     public function cash(Request $request)
     {
         $product = Product::findOrFail($request->buy_product_name);
-
-        $product->product_quantity = $product->product_quantity - $request->buy_quantity;
-        $product->product_sell = $product->product_sell + $request->buy_quantity;
+        $productQuantity = $product->product_quantity;
+        if ($request->buy_quantity > $productQuantity) {
+            switch ($productQuantity) {
+                case NULL:
+                    $productQuantity = "Belum Ada!";
+                    $message = "Maaf stock $product->product_name $productQuantity";
+                    break;
+                case 0:
+                    $productQuantity = "sudah Habis Dijual!";
+                    $message = "Maaf $product->product_name $productQuantity";
+                    break;
+                default:
+                    $productQuantity = "hanya $productQuantity unit!";
+                    $message = "Jumlah barang yang anda inginkan tidak mencukupi, stock $product->product_name $productQuantity";
+            }
+            return redirect("/")->with("failed", $message);
+        } elseif ($request->buy_quantity <= 0) {
+            return redirect("/")->with("failed", "Sila masukkan kuantiti yang benar!");
+        } else {
+            $product->product_quantity -= $request->buy_quantity;
+        }
+        $product->product_sell += $request->buy_quantity;
 
         $product->save();
-        return redirect("/owner")->with("success", "Tahniah, proses pembelian berjaya");
+        return redirect("/")->with("success", "Tahniah, proses pembelian berjaya");
     }
 }

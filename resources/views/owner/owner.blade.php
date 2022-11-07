@@ -2,21 +2,21 @@
 @section('contents')
 <!-- tools -->
 <div class="row">
-    @yield('owner')  
-    <!-- table -->
-    <div class="col-lg-9 my-3">
-      @if(session("success"))
-      <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {{ session("success") }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      @elseif(session("failed"))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session("failed") }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      @endif
-      <div class="p-3 bg-dark text-white">
+  @yield('owner')  
+  <!-- table -->
+  <div class="col-lg-9 my-3">
+    @if(session("success"))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{ session("success") }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session("failed"))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ session("failed") }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    <div class="p-3 bg-dark text-white">
       <div class="col-lg-12 d-flex justify-content-between">
         <h4 class="">Status Terkini</h4>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#generateFormAddProduct"><b>+</b></button>
@@ -30,7 +30,8 @@
         </div>
       </form>
     </div>
-    <!-- end table  -->
+  </div>
+  <!-- end table  -->
 </div>
 <!-- end tools  -->
 <!-- Modal -->

@@ -31,6 +31,17 @@
   <!-- end casher  -->
   <!-- table -->
   <div class="col-lg-9 my-3">
+    @if(session("success"))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{ session("success") }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session("failed"))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ session("failed") }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="p-3 bg-dark text-white">
       <h4 class="">Status Terkini</h4>
       @include('asset/table')
