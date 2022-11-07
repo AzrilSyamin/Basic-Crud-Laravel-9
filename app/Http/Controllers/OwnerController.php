@@ -44,11 +44,11 @@ class OwnerController extends Controller
             return redirect("/owner")->with("failed", "Sila masukkan kuantiti yang benar!");
         } else {
             $product->product_quantity -= $request->buy_quantity;
+            $product->product_sell = $product->product_sell + $request->buy_quantity;
+            $product->product_sales = $product->product_price * $product->product_sell;
+            $product->save();
+            return redirect("/owner")->with("success", "Tahniah, proses pembelian berjaya");
         }
-        $product->product_sell += $request->buy_quantity;
-
-        $product->save();
-        return redirect("/owner")->with("success", "Tahniah, proses pembelian berjaya");
     }
 
     public function add(Request $request)
