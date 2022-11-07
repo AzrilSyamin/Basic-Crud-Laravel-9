@@ -35,7 +35,7 @@ Project ini digambarkan sebagai sistem Kaunter Pembayaran `(Casher)` dan Pemilik
 - CSS - Bootstrap 5 
 - PHP
 - MySQL
-- Javascript + JQuery
+- Javascript
 
 ## Ciri-ciri  
 - Tambah data  
@@ -60,27 +60,44 @@ password untuk halaman owner adalah `Owner`
 Anda perlu clone project ini dengan salah satu langkah dibawah
 ```
 //jika menggunakan http
-git clone https://gitlab.com/azrilsyamin/basic-crud-Vanilla-PHP.git
+git clone https://gitlab.com/azrilsyamin/basic-crud-laravel-9.git
 
 //jika menggunakan SSH
-git clone git@gitlab.com:azrilsyamin/basic-crud-Vanilla-PHP.git
+git clone git@gitlab.com:azrilsyamin/basic-crud-laravel-9.git
 ```
 
-copy file `conf.txt` kepada `conf.php`
+copy file `.env.example` kepada `.env`
 ```
 //jika anda menggunakan terminal 
-cp conf.txt conf.php
+cp .env.example .env
 ```
-kemudian isi detail host anda pada file `conf.php`
+kemudian isi detail host anda pada file `.env`
 ```
-$host = ""; //localhost
-$user = ""; //root
-$pass = ""; //password
-$db_name = ""; //database name
+DB_DATABASE=Laravel   \\ database name
+DB_USERNAME=root      \\ database user
+DB_PASSWORD=          \\ database password
+```
+kemudian jalankan perintah dibawah untuk download vendor yang digunakan dalam project ini
+```
+composer install && composer update
+```
+jalan migration untuk database, untuk generate table
+```
+php artisan migrate
+```
+jangan lupa jalankan peritah dibawah untuk generate key
+```
+php artisan key:generate
+```
+dan yang terakhir untuk jalankan laravel, jalankan perintah dibawah
+```
+php artisan serve
 ```
 Setelah selesai semua langkah diatas, 
-anda boleh buka melalui Browser, 
-**Database** dan **Table** akan dibuat secara auto selepas anda jalankan project ini di browser
+anda boleh buka melalui Browser menggunakan url dibawah
+```
+http://localhost:8000
+```
 
 ## Preview Public 
 ![App Screenshot](public/asset/img/screenshoot/public.png)  
