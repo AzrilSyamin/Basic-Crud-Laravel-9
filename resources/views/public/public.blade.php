@@ -50,4 +50,21 @@
   <!-- end table  -->
 </div>
 <!-- end tools  -->
+
+<script>
+  // hide checkbox and clear session   
+  let mylink = window.location.pathname
+  let path = mylink.split("/")
+  const fileUrl = window.location.protocol + "//" + window.location.host + "/"
+
+  if (window.location.href == fileUrl || window.location.href == fileUrl+location.search) {
+    sessionStorage.clear()
+    document.querySelector("thead tr th:last-child").remove()
+    let mat = document.querySelectorAll("tbody tr td:last-child")
+    for (i = 0; i < mat.length; i++) {
+      mat[i].remove()
+    }
+  }
+  // end hide clear session 
+  </script>
 @endsection

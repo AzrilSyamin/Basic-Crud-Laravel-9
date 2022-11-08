@@ -62,23 +62,5 @@
     
     </footer>
     <script src="/asset/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
-    </script>
-    <script>
-    // hide checkbox and clear session   
-    let mylink = window.location.pathname
-    let path = mylink.split("/")
-    const fileUrl = window.location.protocol + "//" + window.location.host + "/"
-
-    if (window.location.href == fileUrl) {
-    sessionStorage.clear()
-    document.querySelector("thead tr th:last-child").classList.add("visually-hidden")
-    let mat = document.querySelectorAll("tbody tr td:last-child")
-    for (i = 0; i < mat.length; i++) {
-      mat[i].classList.add("visually-hidden")
-    }
-    }
-    // end hide clear session 
-    </script>
   </body>    
 </html>
