@@ -72,7 +72,8 @@ class OwnerController extends Controller
         foreach ($product_name as $key => $product) {
             $products[] = [
                 "product_name" => $product_name[$key],
-                "product_price" => $product_price[$key]
+                "product_price" => $product_price[$key],
+                "created_at" => date("Y-m-d H:i:s")
             ];
         }
         Product::insert($products);
