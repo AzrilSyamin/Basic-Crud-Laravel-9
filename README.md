@@ -33,7 +33,7 @@ Project ini digambarkan sebagai sistem Kaunter Pembayaran `(Casher)` dan Pemilik
  
 ## Tech Stack    
 - CSS - Bootstrap 5 
-- PHP
+- PHP - Laravel 9
 - MySQL
 - Javascript
 
@@ -42,6 +42,7 @@ Project ini digambarkan sebagai sistem Kaunter Pembayaran `(Casher)` dan Pemilik
 - Edit data  
 - Padam Data
 - Cari Data (Search)
+- Pagination
 
 ## Basic Role
 - Public = Penjaga Kaunter
