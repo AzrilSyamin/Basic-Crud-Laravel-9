@@ -25,16 +25,16 @@
               <a class="nav-link {{ ($menu==='Owner')? 'active':''}}" aria-current="page" href="/owner">Owner</a>
             </li>
           </ul>
-          <form method="POST" class="d-flex" role="search">
+          <form class="d-flex" role="search">
             <div class="input-group mb-3">
               <select class="form-select" name="header_search_select">
                 <option value="" selected>All</option>
                 <option value="product_name">Nama Barang</option>
                 <option value="product_quantity">Quantiti</option>
-                <option value="product_sell">Jualan</option>
+                <option value="product_sell">Unit TerJual</option>
               </select>
-              <input class="form-control" type="search" placeholder="Cari" name="header_search_input" required>
-              <button class="btn btn-success" type="submit" name="header_search_button">Cari</button>
+              <input class="form-control" type="search" placeholder="Cari" name="header_search_input" value="{{ request("header_search_input") }}" required>
+              <button class="btn btn-success" type="submit" >Cari</button>
             </div>
           </form>
         </div>

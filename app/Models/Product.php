@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 use Requests;
 
 class Product extends Model
@@ -16,6 +15,21 @@ class Product extends Model
 
     public static function getProducts()
     {
-        return DB::table('products')->paginate(8);
+        return Product::latest()->paginate(10)->withQueryString();
+    }
+
+    public static function headerSearch($value, $column = null)
+    {
+        if ($column == null) {
+            return Product::latest()
+                ->where("product_name", "LIKE", "%" . $value . "%")
+                ->orWhere("product_quantity", "LIKE", "%" . $value . "%")
+                ->orWhere("product_sell", "LIKE", "%" . $value . "%")
+                ->paginate(10)->withQueryString();
+        } else {
+            return Product::latest()
+                ->where($column, "LIKE", "%" . $value . "%")
+                ->paginate(10)->withQueryString();
+        }
     }
 }

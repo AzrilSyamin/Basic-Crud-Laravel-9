@@ -9,10 +9,20 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $products = Product::getProducts();
+        if (request("header_search_input")) {
+            $searchSelect = request("header_search_select");
+            $search = request("header_search_input");
+            if ($searchSelect) {
+                $products = Product::headerSearch($search, $searchSelect);
+            } else {
+                $products = Product::headerSearch($search);
+            }
+        }
         return view(
             "public.public",
             [
-                "products" => Product::getProducts(),
+                "products" => $products,
                 "menu" => "Home"
             ]
         );
