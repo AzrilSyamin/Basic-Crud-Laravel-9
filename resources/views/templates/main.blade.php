@@ -50,9 +50,7 @@
     <div class="container">
       <div class="row  ">
         <div class="col d-flex justify-content-center">
-          <div class="">
-            {{ $products->links() }}
-          </div>
+            {{ $products->onEachSide(0)->links() }}
         </div>
       </div>
     </div>
