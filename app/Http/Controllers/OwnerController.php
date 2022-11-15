@@ -66,8 +66,13 @@ class OwnerController extends Controller
 
         $total = $request->total_comfirm;
         if ($total == null) {
-            $total = 1;
+            return redirect("/owner");
+        } else if ($total <= 0) {
+            return "Sila masukkan nilai yang betul!";
+        } else if ($total > 10) {
+            return "Maaf anda tidak boleh tambah lebih 10 produk!";
         }
+
         return view("owner.add", [
             "products" => Product::getProducts(),
             "total" => $total,
